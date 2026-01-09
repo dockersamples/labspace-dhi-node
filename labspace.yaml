@@ -1,3 +1,8 @@
+metadata:
+  id: dockersamples/labspace-dhi-node
+  sourceRepo: github.com/dockersamples/labspace-dhi-node
+  contentVersion: abcd123 # Will be replaced during release process
+
 title: Docker DHI Node Labspace 
 description: |
   A repository containing a Hello World Node.js application consisting of a basic ExpressJS server and Dockerfile pointing to an Debian Base image to demonstrate the use of Docker Hardened Images (DHI)
