@@ -5,7 +5,7 @@
 Go to the [Node DHI page](https://hub.docker.com/orgs/$$orgname$$/hardened-images/catalog/dhi/node) and click on the `Mirror to repository` button.
 
 In the opened pop-up set the name of the destination repository to `dhi-node`  
-![Mirror Node DHI](.labspace/images/mirror-node.png)  
+![Mirror Node DHI](images/mirror-node.png)  
 
 Click on Mirror. In a few minutes you'll see all available Node DHI tags in your `dhi-node` repository in the Docker Hub. Mirrored repositories work like any other repository in your Docker Hub organization.
 
