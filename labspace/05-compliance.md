@@ -1,14 +1,17 @@
 # DHI Attestations and Scanner Integration
 
-**Attestations**
+## Attestations
 
 In addition to providing a minimal and secure base image, Docker Hardened Images include a comprehensive set of attestations.
 
 You can run the following command to see the full list of attestations for `dhi-node:24-debian13`:
+
 ```bash
 docker scout attest list $$orgname$$/dhi-node:24-debian13
 ```
+
 In the output you will see the list of available attestations, such as:
+
 * CycloneDX SBOM (A software bill of materials in CycloneDX format, listing components, libraries, and versions.)
 * in-toto vulnerabilities (A list of known vulnerabilities (CVEs) affecting the image's components)
 * OpenVEX (A document that identifies vulnerabilities that do not apply to the image and explains why)
@@ -22,25 +25,31 @@ In the output you will see the list of available attestations, such as:
 * SLSA verification summary (A summary attestation indicating the image's compliance with SLSA requirements)
 * SPDX SBOM (An SBOM in SPDX format)
 
-**View SBOMs in Docker Hardened Images**
+## View SBOMs in Docker Hardened Images
 
-DHI provides SBOMs in the CycloneDX, SPDX, or Scout formats. To view a specific SBOM file, such as the SPDX SBOM that is widely adopted in open-source ecosystems, you can use the `docker scout attest get` command:
+DHI provides SBOMs in the CycloneDX, SPDX, or Scout formats. 
+
+To view a specific SBOM file, such as the SPDX SBOM that is widely adopted in open-source ecosystems, you can use the `docker scout attest get` command:
+
 ```bash
 docker scout attest get $$orgname$$/dhi-node:24-debian13 \
---predicate-type https://spdx.dev/Document
+    --predicate-type https://spdx.dev/Document
 ```
 
-**FedRAMP Compliance**
+## FedRAMP Compliance
 
 FIPS 140 compliance is required or strongly recommended in many regulated environments where sensitive data must be protected, such as government, healthcare, finance, and defense.
 
 DHIs include variants that use cryptographic modules validated under FIPS 140. 
 
 You can retrieve and inspect the FIPS attestation for the `$$orgname$$/dhi-node:24-debian13-fips` using the Docker Scout CLI:
+
 ```bash
 docker scout attest get --predicate-type https://docker.com/dhi/fips/v0.1 --predicate $$orgname$$/dhi-node:24-debian13-fips
 ```
+
 In the output you'll see the CMVP # and the FIPS Provider name, for example:
+
 ```plaintext no-copy-button
 "certification": "CMVP #4985",
 "certificationUrl": "https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/4985",
@@ -51,17 +60,21 @@ In the output you'll see the CMVP # and the FIPS Provider name, for example:
 "sunsetDate": "2030-03-10",
 "version": "3.1.2"
 ```
+
 Docker also provides a signed STIG scan attestation for each STIG-hardened image.
 
 You can retrieve and inspect a STIG scan attestation using the Docker Scout CLI:
+
 ```bash
 docker scout attest get --predicate-type https://docker.com/dhi/stig/v0.1 --predicate $$orgname$$/dhi-node:24-debian13-fips
 ```
-**Integration with external security tools**
+
+## Integration with external security tools
 
 To verify the security posture using an external scanning tool you already use, such as Grype or Trivy, you will need to pass the vulnerability information in a compatible format, which Docker Scout can generate for you.
 
 First, you can view the list of available attestations for the DHI-based image using the `docker scout attest` command:
+
 ```bash
 docker scout attest list $$orgname$$/demo-node-dhi:v1
 ```

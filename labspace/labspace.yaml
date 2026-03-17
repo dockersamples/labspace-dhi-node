@@ -3,18 +3,24 @@ metadata:
   sourceRepo: github.com/dockersamples/labspace-dhi-node
   contentVersion: abcd123 # Will be replaced during release process
 
-title: Docker DHI Node Labspace 
+title: Migrating to DHI - Node
 description: |
-  A repository containing a Hello World Node.js application consisting of a basic ExpressJS server and Dockerfile pointing to an Debian Base image to demonstrate the use of Docker Hardened Images (DHI)
+  A lab that demonstrates the process to migrate a Node-based application to Docker Hardened Images (DHI) and how to use DHI Attestations to ensure compliance with security policies.
 
 sections:
-  - title: Introducing Docker Scout and Docker Hardened Images (DHI)
+  - title: Introduction
     contentPath: 01-introduction.md
-  - title: Mirror the image
-    contentPath: 02-mirror-the-image.md
-  - title: Scan the Node.js Application with Docker Scout
-    contentPath: 03-image-scanning.md
-  - title: Making the Switch to Docker Hardened Images
+  - title: Setup
+    contentPath: 02-setup.md
+  - title: Analyzing the Starting Image
+    contentPath: 03-image-analysis.md
+  - title: Migrating to DHI
     contentPath: 04-switch-to-dhi.md
   - title: DHI Attestations and Scanner Integration
     contentPath: 05-compliance.md
+
+services:
+  - title: App
+    url: http://localhost:3050
+    icon: draft
+    id: app

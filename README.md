@@ -1,4 +1,4 @@
-# DHI Node Labspace
+# Labspace - Migrating to DHI - Node
 
 This lab outlines the benefits of Docker Hardened Images and walks you through the migration process for the Node application.
 

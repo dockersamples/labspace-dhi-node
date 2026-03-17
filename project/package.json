@@ -19,5 +19,8 @@
   "jest": {
     "testEnvironment": "node",
     "testTimeout": 60000
+  },
+  "dependencies": {
+    "express": "^5.2.1"
   }
 }

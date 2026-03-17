@@ -1,33 +1,18 @@
 FROM node:24-trixie-slim AS dev
 
-ENV BLUEBIRD_WARNINGS=0 \
-NODE_ENV=production \
-NODE_NO_WARNINGS=1 \
-NPM_CONFIG_LOGLEVEL=warn \
-SUPPRESS_NO_CONFIG_WARNING=true
+ENV BLUEBIRD_WARNINGS=0
+ENV NODE_ENV=production
+ENV NODE_NO_WARNINGS=1
+ENV NPM_CONFIG_LOGLEVEL=warn
+ENV SUPPRESS_NO_CONFIG_WARNING=true
 
 WORKDIR /app
 
-COPY package.json ./
+COPY package* ./
 
-RUN apt-get update \
- && apt-get install -y --no-install-recommends npm \
- && npm install --no-optional \
- && npm cache clean --force \
- && apt-get remove -y npm \
- && apt-get autoremove -y \
- && rm -rf /var/lib/apt/lists/*
+RUN npm install --no-optional \
+ && npm cache clean --force
 
-COPY . .
-
-
-#-- Prod stage --
-FROM node:24-trixie-slim AS prod
-
-WORKDIR /app
-
-COPY --from=dev /app /app
-
-ENTRYPOINT ["node"]
-CMD ["app.js"]
+COPY src ./src
 EXPOSE 3000
+CMD ["node", "src/app.js"]
