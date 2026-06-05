@@ -13,7 +13,7 @@ This demo repository contains a simple Node.js application consisting of a basic
 2. Run the app using the following `docker run` command:
 
     ```bash
-    docker run -p 3050:3000 --name dhi-demo-app demo-node-doi:v1
+    docker run -d -p 3050:3000 --name dhi-demo-app demo-node-doi:v1
     ```
 
 3. Open the app by going to :tabLink[http://localhost:3050]{href="http://localhost:3050" id="app" title="App" icon="draft"}. You should see a simple "Hello World!" message.
