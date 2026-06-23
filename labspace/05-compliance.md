@@ -85,7 +85,7 @@ To verify the security posture using an external scanning tool you already use, 
 First, you can view the list of available attestations for the DHI-based image using the `docker scout attest` command:
 
 ```bash
-docker scout attest list $$orgname$$/demo-node-dhi:v1
+docker scout attest list $$orgname$$/demo-node-dhi:v2
 ```
 
 You'll see two OpenVEX files: one for the DHI base image and another for any custom exceptions (like no-dsa) specific to your image.
@@ -93,7 +93,7 @@ You'll see two OpenVEX files: one for the DHI base image and another for any cus
 Then, to integrate this information with external tools, you can export the VEX data into a vex.json file. Starting with Docker Scout v1.18.3, you can use the `docker scout vex get` command to get the merged VEX document from all VEX attestations:
 
 ```bash
-docker scout vex get $$orgname$$/demo-node-dhi:v1 --output vex.json
+docker scout vex get $$orgname$$/demo-node-dhi:v2 --output vex.json
 ```
 
 This generates a `vex.json` file containing all VEX statements for the specified image. Tools that support VEX can then use this file to suppress known non-exploitable CVEs.
