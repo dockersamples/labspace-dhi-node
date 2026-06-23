@@ -7,7 +7,7 @@ In addition to providing a minimal and secure base image, Docker Hardened Images
 You can run the following command to see the full list of attestations for `dhi-node:24-debian13`:
 
 ```bash
-docker scout attest list $$orgname$$/dhi-node:24-debian13
+docker scout attest list $$orgname$$/demo-node-dhi:v2
 ```
 
 In the output you will see the list of available attestations, such as:
@@ -32,7 +32,7 @@ DHI provides SBOMs in the CycloneDX, SPDX, or Scout formats.
 To view a specific SBOM file, such as the SPDX SBOM that is widely adopted in open-source ecosystems, you can use the `docker scout attest get` command:
 
 ```bash
-docker scout attest get $$orgname$$/dhi-node:24-debian13 \
+docker scout attest get $$orgname$$/demo-node-dhi:v2 \
     --predicate-type https://spdx.dev/Document
 ```
 
