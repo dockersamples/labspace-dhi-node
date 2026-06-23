@@ -45,8 +45,6 @@ DHIs include variants that use cryptographic modules validated under FIPS 140.
 > [!IMPORTANT]
 > FIPS variants are not available on the free tier. The `-fips` and `-fips-dev` image variants are not published to the public `dhi.io` registry. They require a paid Docker Hardened Images subscription, and on the paid tier the only way to consume them is by mirroring the `node` repository into your organization and pulling from `$$orgname$$/dhi-node`. If you are following this lab on the free tier, the FIPS commands below will not work, hence you can read through this section for reference and return to it once you have a paid plan with FIPS images mirrored.
 
-:::conditionalDisplay{variable="tier" requiredValue="paid"}
-
 You can retrieve and inspect the FIPS attestation for the `$$orgname$$/dhi-node:24-debian13-fips` using the Docker Scout CLI:
 
 ```bash
