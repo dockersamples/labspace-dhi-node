@@ -4,7 +4,7 @@
 
 In addition to providing a minimal and secure base image, Docker Hardened Images include a comprehensive set of attestations.
 
-You can run the following command to see the full list of attestations for `dhi-node:24-debian13`:
+You can run the following command to see the full list of attestations for `demo-node-dhi:v2`:
 
 ```bash
 docker scout attest list $$orgname$$/demo-node-dhi:v2
