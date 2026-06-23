@@ -51,12 +51,6 @@ You can retrieve and inspect the FIPS attestation for the `$$orgname$$/dhi-node:
 docker scout attest get --predicate-type https://docker.com/dhi/fips/v0.1 --predicate $$orgname$$/dhi-node:24-debian13-fips
 ```
 
-You can retrieve and inspect the FIPS attestation for the `$$orgname$$/dhi-node:24-debian13-fips` using the Docker Scout CLI:
-
-```bash
-docker scout attest get --predicate-type https://docker.com/dhi/fips/v0.1 --predicate $$orgname$$/dhi-node:24-debian13-fips
-```
-
 In the output you'll see the CMVP # and the FIPS Provider name, for example:
 
 ```plaintext no-copy-button
